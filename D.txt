@@ -1,0 +1,17 @@
+Write a C program to illustrate the working of exec() 
+system call.
+
+first.c
+#include<stdio.h>
+void main(){
+printf("this is the first.c called by execv\n");
+}
+second.c
+#include<stdio.h>
+#include<unistd.h>
+void main(){
+char* args[]={"./first.o",NULL};
+printf("before execv\n");
+execv(args[0],args);
+printf("after execv\n");
+}

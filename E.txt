@@ -1,0 +1,15 @@
+C program to illustrate the working of stat() system call.
+
+#include<stdio.h>
+#include<sys/stat.h>
+void main(){
+printf("ente the name of the file: ");
+char f_name[78];
+scanf("%s",f_name);
+struct stat s;
+stat(f_name,&s);
+printf("last access time of file: %ld\n", s.st_atime);
+printf("last modified time: %d\n", s.st_mtime);
+printf("size of file: %d\n", s.st_size);
+printf("file mode: %o\n", s.st_mode);
+}
